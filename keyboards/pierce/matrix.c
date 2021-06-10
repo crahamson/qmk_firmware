@@ -84,7 +84,7 @@ static bool read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
         matrix_output_unselect_delay();  // wait for row signal to go HIGH
     }
 
-    uprintf("i2c_slave_reg (row %u: %u\n", current_row, i2c_slave_reg[current_row]);
+    // Inject scanned matrix from wireless module
     current_row_value |= ((matrix_row_t)i2c_slave_reg[current_row]);
     
     // If the row has changed, store the row and return the changed flag.
