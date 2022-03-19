@@ -1,4 +1,4 @@
-TRACKPOINT = yes
+TRACKPOINT = no
 AUTO_BUTTONS = yes
 COMBO_ENABLE = yes
 
