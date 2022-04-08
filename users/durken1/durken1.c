@@ -20,9 +20,9 @@
 #define FN_ENT LT(FN, KC_ENT)
 #define SYM_BSP LT(SYM, KC_BSPC)
 
-const uint16_t PROGMEM arng_combo[] = {KC_W, KC_F, COMBO_END};
-const uint16_t PROGMEM adia_combo[] = {KC_U, KC_K, COMBO_END};
-const uint16_t PROGMEM odia_combo[] = {KC_DOT, KC_COMM, COMBO_END};
+const uint16_t PROGMEM arng_combo[] = {ALT_R, SFT_S, COMBO_END};
+const uint16_t PROGMEM adia_combo[] = {SFT_E, ALT_I, COMBO_END};
+const uint16_t PROGMEM odia_combo[] = {SE_U, SE_K, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
 	[WF_ARNG] = COMBO(arng_combo, SE_ARNG),
 	[UK_ADIA] = COMBO(adia_combo, SE_ADIA),
