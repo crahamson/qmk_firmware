@@ -1,7 +1,15 @@
-# Pierce, a modded crkbd
+# Pierce
 
-* Using one MCU and an IDC connection between halves.
-* Trackpoint connection instead of OLED
-* 3x5+3
-* Increased pinky stagger
-* Inner-most thumb key moved to utilize 1u instead of 1.5u
+![Pierce](https://i.imgur.com/JOUH1UI.jpeg)
+
+A modular wireless / semi-wireless split 36 key keyboard. Wireless version uses a dongle as a receiver for both halves while the semi-wireless version uses the wired half as a receiver for the wireless half.
+
+* Keyboard Maintainer: [durken1](https://github.com/durken1/)
+* * Hardware Supported: pierce PCB 2.0
+* * Hardware Information: [pierce](https://github.com/durken1/pierce)
+*
+* Make example for this keyboard (after setting up your build environment):
+*
+*     make pierce:default
+*
+*     See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).

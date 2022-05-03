@@ -1,41 +1,19 @@
 #include QMK_KEYBOARD_H
-#include "keymap_swedish.h"
-
-
-// Left-hand home row mods colemak
-#define GUI_A LGUI_T(KC_A)
-#define ALT_R LALT_T(KC_R)
-#define SFT_S LSFT_T(KC_S)
-#define CTRL_T LCTL_T(KC_T)
-
-// Right-hand home row mods colemak
-#define CTL_N RCTL_T(KC_N)
-#define SFT_E RSFT_T(KC_E)
-#define ALT_I LALT_T(KC_I)
-#define GUI_O LGUI_T(KC_O)
+enum layers { BASE, MBO, SYM, NUM, FN, };
 
 #define NUM_SPC LT(NUM, KC_SPC)
 #define FN_ENT LT(FN, KC_ENT)
 #define SYM_BSP LT(SYM, KC_BSPC)
 
-const uint16_t PROGMEM arng_combo[] = {KC_W, KC_F, COMBO_END};
-const uint16_t PROGMEM adia_combo[] = {KC_U, KC_K, COMBO_END};
-const uint16_t PROGMEM odia_combo[] = {KC_DOT, KC_COMM, COMBO_END};
-combo_t key_combos[COMBO_COUNT] = {
-    [WF_ARNG] = COMBO(arng_combo, SE_ARNG),
-    [UK_ADIA] = COMBO(adia_combo, SE_ADIA),
-    [HC_ODIA] = COMBO(odia_combo, SE_ODIA)
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT(
  // Colemak Mod-DH
   //,--------------------------------------------,                    ,--------------------------------------------.
-         SE_Q,    SE_W,    SE_F,    SE_P,    SE_B,                         SE_Y,    SE_L,    SE_U,    SE_K, SE_QUOT,
+         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-        GUI_A,   ALT_R,   SFT_S,  CTRL_T,    SE_G,                         SE_M,   CTL_N,   SFT_E,   ALT_I,   GUI_O,
+         KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         SE_Z,    SE_X,    SE_C,    SE_D,    SE_V,                         SE_J,    SE_H, SE_COMM,  SE_DOT, SE_MINS,
+         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                   KC_ESC, NUM_SPC,  KC_TAB,     FN_ENT, SYM_BSP,  KC_DEL
                              //`--------------------------'  '--------------------------'
@@ -43,43 +21,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 
-  [MBO] = LAYOUT(
-  // Mouse
-  //,--------------------------------------------,                    ,--------------------------------------------.
-      _______, _______, _______, _______, _______,                      KC_BTN1, KC_BTN2, _______, _______, _______,
-  //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______,                      KC_BTN3, _______, _______, _______, _______,
-  //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______,
-  //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                 _______, _______, _______,    _______, _______, _______
-                             //`--------------------------'  '--------------------------'
-
-  ),
-
   [SYM] = LAYOUT(
   // Symbols
   //,--------------------------------------------,                    ,--------------------------------------------.
-      SE_SECT, SE_ACUT, SE_SLSH, SE_TILD, _______,                      _______, SE_PIPE, SE_BSLS, SE_DIAE, SE_CIRC,
+      _______, _______, KC_SLSH, KC_TILD, _______,                      _______, KC_PIPE, KC_BSLS, KC_CIRC, _______,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      SE_EXLM,  SE_DLR, SE_LPRN, SE_LBRC, _______,                      _______, SE_RBRC, SE_RPRN, SE_HASH, SE_QUES,
+      KC_EXLM,  KC_DLR, KC_LPRN, KC_LBRC, _______,                      _______, KC_RBRC, KC_RPRN, KC_HASH, KC_QUES,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      _______, SE_PERC, SE_LCBR, SE_LABK, _______,                      _______, SE_RABK, SE_RCBR, SE_AMPR, _______,
+      _______, KC_PERC, KC_LCBR, KC_LABK, _______,                      _______, KC_RABK, KC_RCBR, KC_AMPR, _______,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                   SE_AT,  SE_EQL, SE_DQUO,    _______, _______, _______
+                                   KC_AT,  KC_EQL, KC_DQUO,    _______, _______, _______
                              //`--------------------------'  '--------------------------'
   ),
 
   [NUM] = LAYOUT(
   // Numbers
   //,--------------------------------------------,                    ,--------------------------------------------.
-      _______, _______, _______, _______, _______,                      _______,    SE_7,    SE_8,    SE_9, _______,
+      _______, _______, _______, _______, _______,                      _______,    KC_7,    KC_8,    KC_9, _______,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      SE_PLUS, SE_MINS, SE_ASTR, SE_SLSH, _______,                      _______,    SE_4,    SE_5,    SE_6, _______,
+      KC_PLUS, KC_MINS, KC_ASTR, KC_SLSH, _______,                      _______,    KC_4,    KC_5,    KC_6, _______,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      _______, _______, KC_VOLD, KC_VOLU, _______,                       KC_SPC,    SE_1,    SE_2,    SE_3, _______,
+      _______, _______, KC_VOLD, KC_VOLU, _______,                       KC_SPC,    KC_1,    KC_2,    KC_3, _______,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                 _______, _______, _______,    SE_COMM,   SE_0,  SE_DOT
+                                 _______, _______, _______,    KC_COMM,   KC_0,  KC_DOT
                              //`--------------------------'  '--------------------------'
   ),
 

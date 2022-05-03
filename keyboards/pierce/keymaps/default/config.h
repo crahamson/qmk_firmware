@@ -1,7 +1,5 @@
 #pragma once
 
-enum layers { BASE, MBO, SYM, NUM, FN, };
-enum combos { WF_ARNG, UK_ADIA, HC_ODIA };
 
 // default but important
 #define TAPPING_TERM 220
@@ -16,7 +14,3 @@ enum combos { WF_ARNG, UK_ADIA, HC_ODIA };
 
 // Recommended for heavy chording.
 #define QMK_KEYS_PER_SCAN 4
-
-// Combo settings
-#define COMBO_COUNT 3
-#define COMBO_TERM 35
