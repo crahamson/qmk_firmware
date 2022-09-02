@@ -24,7 +24,7 @@ enum layers {
     CFG,
 };
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [ALPHA_QWERTY] = LAYOUT(
+  [ALPHA_QWERTY] = LAYOUT_split_3x5_3(
   //┌────────┬────────┬────────┬────────┬────────┐                    ┌────────┬────────┬────────┬────────┬────────┐
          KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
@@ -32,10 +32,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
  LSFT_T(KC_Z),    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM, KC_DOT, RSFT_T(KC_SLSH),
   //├────────┼────────┼────────┼────────┼────────┼────────┐  ┌────────┼────────┼────────┼────────┼────────┼────────┤
-         LCTL_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),    LT(_SYM, KC_BSPC), KC_ENT, LALT_T(KC_DEL)
+         LCTL_T(KC_ESC), LT(NUM,KC_SPC), LT(NAV, KC_TAB),    LT(SYM, KC_BSPC), KC_ENT, LALT_T(KC_DEL)
   //                           └────────┴────────┴────────┘  └────────┴────────┴────────┘
   ),
-  [ALPHA_COLEMAK] = LAYOUT(
+  [ALPHA_COLEMAK] = LAYOUT_split_3x5_3(
   //┌────────┬────────┬────────┬────────┬────────┐                    ┌────────┬────────┬────────┬────────┬────────┐
        KC_GRV, KC_CIRC,   KC_AT,  KC_DLR, KC_TILD,                      KC_AMPR, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______,    _______, KC_BSPC, _______
   //                           └────────┴────────┴────────┘  └────────┴────────┴────────┘
   ),
-  [SYM] = LAYOUT(
+  [SYM] = LAYOUT_split_3x5_3(
   //┌────────┬────────┬────────┬────────┬────────┐                    ┌────────┬────────┬────────┬────────┬────────┐
       XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                      XXXXXXX, KC_PGDN,   KC_UP, KC_PGUP,  KC_DEL,
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
@@ -54,10 +54,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┐  ┌────────┼────────┼────────┼────────┼────────┼────────┤
-                                 XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, MO(_CFG), XXXXXXX
+                                 XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, MO(CFG), XXXXXXX
   //                           └────────┴────────┴────────┘  └────────┴────────┴────────┘
   ),
-  [NUM] = LAYOUT(
+  [NUM] = LAYOUT_split_3x5_3(
   //┌────────┬────────┬────────┬────────┬────────┐                    ┌────────┬────────┬────────┬────────┬────────┐
       XXXXXXX,   KC_F9,  KC_F10,  KC_F11,  KC_F12,                      KC_PPLS,   KC_P7,   KC_P8,   KC_P9, KC_PSLS,
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
@@ -68,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  XXXXXXX, XXXXXXX, XXXXXXX,    KC_PEQL, KC_PENT, XXXXXXX
   //                           └────────┴────────┴────────┘  └────────┴────────┴────────┘
   ),
-  [CFG] = LAYOUT(
+  [CFG] = LAYOUT_split_3x5_3(
   //┌────────┬────────┬────────┬────────┬────────┐                    ┌────────┬────────┬────────┬────────┬────────┐
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,DF(_ALPHA_QWERTY), DF(_ALPHA_COLEMAK),
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX,DF(ALPHA_QWERTY), DF(ALPHA_COLEMAK),
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┤                    ├────────┼────────┼────────┼────────┼────────┤
