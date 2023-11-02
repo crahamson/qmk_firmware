@@ -30,6 +30,7 @@ uint16_t measure_middle_keymap_coords(uint8_t col, uint8_t row, uint8_t time, ui
 void shift_data(uint32_t data, int data_idle, int shcp_idle, int stcp_idle);
 void dac_write_threshold(uint16_t value);
 uint8_t test_single(uint8_t col, uint16_t time, uint8_t *interference_ptr);
+extern const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS];
 
 #endif
 
