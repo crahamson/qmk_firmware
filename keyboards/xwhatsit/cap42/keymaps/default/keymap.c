@@ -8,6 +8,37 @@
 #define ALT_DEL MT(MOD_LALT, KC_DEL)
 #define SFT_INS LSFT(KC_INS)
 
+// Combos
+enum combos {
+  ST_CTL,
+  RS_SFT,
+  AR_GUI,
+  RT_ALT,
+  NE_CTL,
+  EI_SFT,
+  IO_GUI,
+  NI_ALT
+};
+
+const uint16_t PROGMEM st_combo[] = {KC_S, KC_T, COMBO_END};
+const uint16_t PROGMEM rs_combo[] = {KC_R, KC_S, COMBO_END};
+const uint16_t PROGMEM ar_combo[] = {KC_A, KC_R, COMBO_END};
+const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
+const uint16_t PROGMEM ne_combo[] = {KC_N, KC_E, COMBO_END};
+const uint16_t PROGMEM ei_combo[] = {KC_E, KC_I, COMBO_END};
+const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM ni_combo[] = {KC_N, KC_I, COMBO_END};
+
+combo_t key_combos[] = {
+  [ST_CTL] = COMBO(st_combo, KC_LCTL),
+  [RS_SFT] = COMBO(rs_combo, KC_LSFT),
+  [AR_GUI] = COMBO(ar_combo, KC_LGUI),
+  [RT_ALT] = COMBO(rt_combo, KC_LALT),
+  [NE_CTL] = COMBO(ne_combo, KC_LCTL),
+  [EI_SFT] = COMBO(ei_combo, KC_LSFT),
+  [IO_GUI] = COMBO(io_combo, KC_LGUI),
+  [NI_ALT] = COMBO(ni_combo, KC_LALT),
+};
 
 // Left-hand home row mods colemak
 #define GUI_A LGUI_T(KC_A)
