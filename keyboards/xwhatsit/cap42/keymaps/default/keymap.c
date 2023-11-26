@@ -4,7 +4,9 @@
 #define NUM_SPC LT(NUM, KC_SPC)
 #define FN_ENT LT(FN, KC_ENT)
 #define SYM_BSP LT(SYM, KC_BSPC)
-#define CTL_DEL MT(MOD_LCTL, KC_DEL)
+#define CTL_TAB MT(MOD_LCTL, KC_TAB)
+#define ALT_DEL MT(MOD_LALT, KC_DEL)
+#define SFT_INS LSFT(KC_INS)
 
 
 // Left-hand home row mods colemak
@@ -43,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LALT, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    KC_Y,    KC_L,    KC_U,    KC_K,    SE_ARNG, SE_ODIA,
   KC_LCTL, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    SE_ADIA,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_J,    KC_H,    KC_COMM, KC_DOT,  SE_MINS, KC_LGUI,
-                             KC_ESC,  NUM_SPC, KC_TAB,  FN_ENT,  SYM_BSP, CTL_DEL
+                             KC_ESC,  NUM_SPC, CTL_TAB, FN_ENT,  SYM_BSP, ALT_DEL
 ),
 
 /* SYM
@@ -58,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [SYM] = LAYOUT(
-  _______, SE_SECT, SE_ACUT, SE_SLSH, SE_TILD, _______, SE_CIRC, SE_PIPE, SE_BSLS, SE_DIAE, SE_ODIA, _______,
-  _______, SE_EXLM, SE_DLR,  SE_LPRN, SE_LBRC, _______, _______, SE_RBRC, SE_RPRN, SE_HASH, SE_QUES, _______,
+  QK_BOOT, SE_SECT, SE_ACUT, SE_SLSH, SE_TILD, _______, SE_CIRC, SE_PIPE, SE_BSLS, SE_DIAE, SE_ODIA, _______,
+  _______, SE_EXLM, SE_DLR,  SE_LPRN, SE_LBRC, SFT_INS, _______, SE_RBRC, SE_RPRN, SE_HASH, SE_QUES, _______,
   _______, SE_QUOT, SE_PERC, SE_LCBR, SE_LABK, _______, _______, SE_RABK, SE_RCBR, SE_AMPR, _______, _______,
                              SE_AT,   SE_EQL,  SE_DQUO, _______, _______, _______
 ),
