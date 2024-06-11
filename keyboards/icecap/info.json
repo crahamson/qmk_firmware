@@ -1,23 +1,15 @@
 {
-    "manufacturer": "durken",
     "keyboard_name": "icecap",
     "maintainer": "durken1",
-    "bootloader": "rp2040",
-    "features": {
-        "bootmagic": true,
-        "command": false,
-        "console": true,
-        "extrakey": true,
-        "mousekey": true,
-        "nkro": true
-    },
+    "manufacturer": "durken1",
+    "processor": "NEORV32",
+    "bootloader": "gd32v-dfu",
+    "board": "SIPEED_LONGAN_NANO",
+    "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "custom_lite" : true,
         "cols": ["C2", "C2", "C2", "C2", "C2", "C2", "C2", "C2", "C2", "C2", "C2", "C2"],
         "rows": ["D1", "D1", "D1", "D1"]
     },
-    "processor": "RP2040",
-    "url": "",
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x0000",

@@ -174,7 +174,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case others0 :
         if (record->event.pressed) {
             // when keycode rarrow is pressed
-            SEND_STRING(" <= (others => '0');");
+            SEND_STRING("(others => '0');");
         } else {
             // when keycode rarrow is released
         }

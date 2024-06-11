@@ -54,6 +54,7 @@
         "processor": {
             "type": "string",
             "enum": [
+                "NEORV32",
                 "cortex-m0",
                 "cortex-m0plus",
                 "cortex-m3",
