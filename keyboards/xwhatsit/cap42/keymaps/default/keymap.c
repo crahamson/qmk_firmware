@@ -97,19 +97,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* SYM
  * ,-----------------------------------------------------------------------------------.
- * | RST  |   §  |   '  |   /  |   ~  |      |   ^  |   |  |   \  |   "  |      | GAME |
+ * | RST  |   §  |   '  |   /  |   ~  |      |      |   |  |   \  |   ¨  |   €  | GAME |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | <=   |   !  |   $  |   (  |   [  | paste|      |   ]  |   )  |   #  |   ?  |  =>  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |   '  |   %  |   {  |   <  |      |      |   >  |   }  |   &  |o=>'0'|      |
+ * |  ^   |   '  |   %  |   {  |   <  |      |      |   >  |   }  |   &  |o=>'0'|  µ   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  *                      |  @   |  =   |  "   |      |      |      |
  *                      `-----------------------------------------'
  */
 [SYM] = LAYOUT(
-  QK_BOOT, SE_SECT, SE_ACUT, SE_SLSH, SE_TILD, _______, SE_CIRC, SE_PIPE, SE_BSLS, SE_DIAE, _______, TG(GAME),
+  QK_BOOT, SE_SECT, SE_ACUT, SE_SLSH, SE_TILD, _______, _______, SE_PIPE, SE_BSLS, SE_DIAE, SE_EURO, TG(GAME),
   larrow,  SE_EXLM, SE_DLR,  SE_LPRN, SE_LBRC, SFT_INS, _______, SE_RBRC, SE_RPRN, SE_HASH, SE_QUES, rarrow,
-  _______, SE_QUOT, SE_PERC, SE_LCBR, SE_LABK, KC_SPC,  _______, SE_RABK, SE_RCBR, SE_AMPR, others0, _______,
+  SE_CIRC, SE_QUOT, SE_PERC, SE_LCBR, SE_LABK, KC_SPC,  _______, SE_RABK, SE_RCBR, SE_AMPR, others0, SE_MICR,
                              SE_AT,   SE_EQL,  SE_DQUO, _______, _______, _______
 ),
  
