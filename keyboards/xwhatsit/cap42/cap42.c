@@ -14,6 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "cap42.h"
 
-// place overrides here
+const char *KEYBOARD_FILENAME = __FILE__; // used by util_comm
+
+void keyboard_post_init_kb(void)
+{
+}
